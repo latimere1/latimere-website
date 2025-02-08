@@ -8,23 +8,27 @@
 </head>
 <body>
     <header>
-        <div class="logo"><a href="index.html">Latimere</a></div>
-        <nav>
+        <div class="logo" style="text-align: center;">
+            <a href="index.html">Latimere</a>
+        </div>
+        <nav style="text-align: center;">
             <a href="home.html">Home</a>
             <a href="about.html">About</a>
             <a href="features.html">Features</a>
             <a href="contact.html">Contact</a>
         </nav>
-        <button class="cta-btn">Get Started</button>
+        <button class="cta-btn" style="background-color: black; color: white; display: block; margin: 0 auto;">Get Started</button>
     </header>
-    <section class="contact">
+    
+    <section class="contact" style="text-align: center;">
         <h1>Contact Us</h1>
         <p>Have questions? We’d love to hear from you.</p>
-        <p>Email us at: <a href="mailto:info@latimere.com">info@latimere.com</a></p>
+        <p>Email us at: <a href="mailto:info@latimere.com" style="color: white;">info@latimere.com</a></p>
     </section>
-    <section class="contact-form">
+    
+    <section class="contact-form" style="text-align: center;">
         <h2>Send Us a Message</h2>
-        <form action="#" method="POST">
+        <form action="#" method="POST" style="display: flex; flex-direction: column; align-items: center;">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
             
@@ -34,31 +38,18 @@
             <label for="message">Message:</label>
             <textarea id="message" name="message" rows="5" required></textarea>
             
-            <button type="submit" class="btn">Submit</button>
+            <button type="submit" class="btn" style="margin-top: 10px;">Submit</button>
         </form>
     </section>
-    <section class="office-locations">
-        <h2>Our Locations</h2>
-        <div class="locations-grid">
-            <div class="location-card">
-                <h3>New York Office</h3>
-                <p>123 Innovation Street, NY, USA</p>
-                <p>Phone: +1 123-456-7890</p>
-            </div>
-            <div class="location-card">
-                <h3>San Francisco Office</h3>
-                <p>456 Future Ave, SF, USA</p>
-                <p>Phone: +1 987-654-3210</p>
-            </div>
-        </div>
-    </section>
-    <footer>
+    
+    <footer style="text-align: center; margin-top: 40px;">
         <div class="footer-links">
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="terms.html">Terms of Service</a>
+            <a href="privacy.html" style="color: white;">Privacy Policy</a>
+            <a href="terms.html" style="color: white;">Terms of Service</a>
         </div>
         <p>&copy; 2025 Latimere. All rights reserved.</p>
     </footer>
+    
     <script src="script.js"></script>
 </body>
 </html>
