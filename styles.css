@@ -22,6 +22,13 @@ header {
     font-weight: bold;
 }
 
+.logo a {
+    color: black;  /* Sets text color to black */
+    text-decoration: none;  /* Removes underline */
+    font-weight: bold;  /* Makes it stand out */
+    font-size: 24px;  /* Adjust size as needed */
+}
+
 nav {
     display: flex;
     gap: 20px;
