@@ -82,12 +82,37 @@ nav a {
     transform: scale(1.05);
 }
 
-.hero, .about, .features, .waitlist {
+.hero, .about, .features {
     text-align: center;
     padding: 80px 10%;
     background-color: #121212;
     color: white;
     animation: fadeIn 1s ease-in-out;
+}
+
+.features {
+    background-color: #1E1E1E;
+}
+
+.features h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.feature-card {
+    background-color: cyan;
+    color: #1E1E1E;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 18px;
 }
 
 .waitlist {
