@@ -38,6 +38,7 @@ header {
     cursor: pointer;
     position: absolute;
     right: 20px;
+    color: black; /* Ensure the hamburger menu is black */
 }
 
 nav {
@@ -57,7 +58,15 @@ nav a {
 }
 
 .cta-btn {
-    display: none;
+    display: block;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
 }
 
 .hero {
@@ -127,6 +136,11 @@ footer {
         display: block;
         position: absolute;
         right: 20px;
+        color: black;
+    }
+
+    .cta-btn {
+        display: none;
     }
 
     nav {
