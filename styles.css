@@ -15,18 +15,29 @@ header {
     color: #1E1E1E;
     font-size: 24px;
     font-weight: bold;
+    position: relative;
 }
 
 .logo {
     font-size: 28px;
     font-weight: bold;
+    text-align: center;
+    flex-grow: 1;
 }
 
 .logo a {
-    color: black;  /* Sets text color to black */
-    text-decoration: none;  /* Removes underline */
-    font-weight: bold;  /* Makes it stand out */
-    font-size: 24px;  /* Adjust size as needed */
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
 }
 
 nav {
@@ -41,6 +52,7 @@ nav a {
 }
 
 .cta-btn {
+    display: none;
     background-color: white;
     color: cyan;
     border: none;
@@ -102,15 +114,24 @@ footer {
 /* Mobile Responsive Header */
 @media (max-width: 768px) {
     header {
+        justify-content: center;
         flex-direction: column;
-        align-items: center;
-        text-align: center;
+    }
+
+    .menu-icon {
+        display: block;
     }
 
     nav {
+        display: none;
         flex-direction: column;
-        gap: 10px;
-        margin-top: 10px;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: cyan;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     nav a {
@@ -118,9 +139,8 @@ footer {
         padding: 10px 0;
     }
 
-    .cta-btn {
-        margin-top: 10px;
-        width: 100%; /* Make button full width */
-        max-width: 200px;
+    .show-menu {
+        display: flex !important;
+        flex-direction: column;
     }
 }
