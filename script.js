@@ -2,6 +2,11 @@ function showMessage() {
     alert("Welcome to Latimere! Aethra is here to assist you.");
 }
 
+function toggleMenu() {
+    var menu = document.querySelector("nav");
+    menu.classList.toggle("show-menu");
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     const ctaButton = document.querySelector(".cta-btn");
     if (ctaButton) {
