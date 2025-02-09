@@ -4,9 +4,11 @@ function showMessage() {
 
 document.addEventListener("DOMContentLoaded", function() {
     const ctaButton = document.querySelector(".cta-btn");
-    ctaButton.addEventListener("click", function() {
-        alert("Getting started with Aethra!");
-    });
+    if (ctaButton) {
+        ctaButton.addEventListener("click", function() {
+            alert("Getting started with Aethra!");
+        });
+    }
 
     const featureCards = document.querySelectorAll(".feature-card");
     featureCards.forEach(card => {
@@ -17,4 +19,14 @@ document.addEventListener("DOMContentLoaded", function() {
             card.style.backgroundColor = "cyan";
         });
     });
+
+    // Hamburger menu functionality
+    const menuIcon = document.querySelector(".menu-icon");
+    const mobileMenu = document.getElementById("mobile-menu");
+    
+    if (menuIcon && mobileMenu) {
+        menuIcon.addEventListener("click", function() {
+            mobileMenu.classList.toggle("show-menu");
+        });
+    }
 });
