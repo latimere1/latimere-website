@@ -45,6 +45,9 @@ nav {
     justify-content: center;
     flex-grow: 1;
     gap: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 nav a {
@@ -142,6 +145,8 @@ footer {
         padding: 10px;
         border-radius: 8px;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        left: auto;
+        transform: none;
     }
 
     nav a {
