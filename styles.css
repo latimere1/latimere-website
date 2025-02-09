@@ -42,6 +42,8 @@ header {
 
 nav {
     display: flex;
+    justify-content: center;
+    flex-grow: 1;
     gap: 20px;
 }
 
