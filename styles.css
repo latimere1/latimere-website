@@ -21,8 +21,8 @@ header {
 .logo {
     font-size: 28px;
     font-weight: bold;
-    text-align: center;
-    flex-grow: 1;
+    text-align: left;
+    flex-grow: 0;
 }
 
 .logo a {
@@ -52,13 +52,15 @@ nav a {
 }
 
 .cta-btn {
-    display: none;
-    background-color: white;
-    color: cyan;
+    display: block;
+    background-color: black;
+    color: white;
     border: none;
     padding: 10px 20px;
     font-size: 18px;
     cursor: pointer;
+    position: absolute;
+    right: 20px;
 }
 
 .hero {
@@ -114,8 +116,14 @@ footer {
 /* Mobile Responsive Header */
 @media (max-width: 768px) {
     header {
-        justify-content: center;
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        text-align: center;
+        flex-grow: 1;
     }
 
     .menu-icon {
@@ -142,5 +150,10 @@ footer {
     .show-menu {
         display: flex !important;
         flex-direction: column;
+    }
+
+    .cta-btn {
+        position: relative;
+        margin-top: 10px;
     }
 }
