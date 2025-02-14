@@ -35,3 +35,36 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("waitlist-form").addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const email = document.getElementById("email").value;
+        const messageBox = document.getElementById("waitlist-message");
+
+        try {
+            const response = await fetch("https://latimere-website.amazonaws.com/prod/join-waitlist", {
+
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ email })
+            });
+
+            const data = await response.json();
+            if (data.success) {
+                messageBox.textContent = "You've been added to the waitlist!";
+                messageBox.style.color = "green";
+                document.getElementById("email").value = "";
+            } else {
+                messageBox.textContent = "Error: " + data.message;
+                messageBox.style.color = "red";
+            }
+        } catch (error) {
+            messageBox.textContent = "An error occurred. Please try again.";
+            messageBox.style.color = "red";
+        }
+    });
+});

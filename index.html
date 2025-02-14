@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <header>
         <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
         <div class="logo">
@@ -28,13 +29,14 @@
     </section>
 
     <section class="waitlist">
-        <h2>Join the Waitlist</h2>
-        <p>Be the first to experience Aethra. Sign up to receive updates and exclusive early access.</p>
-        <form action="#" method="POST">
-            <input type="email" name="email" placeholder="Enter your email" required>
-            <button type="submit" class="btn">Subscribe</button>
-        </form>
-    </section>
+    <h2>Join the Waitlist</h2>
+    <p>Be the first to experience Aethra. Sign up to receive updates and exclusive early access.</p>
+    <form id="waitlist-form">
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <button type="submit" class="btn">Subscribe</button>
+    </form>
+    <p id="waitlist-message"></p>
+</section>
     
     <section class="features">
         <h2>Why Choose Aethra?</h2>
