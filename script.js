@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const messageBox = document.getElementById("waitlist-message");
 
         try {
-            const response = await fetch("https://bzi99fvlbg.execute-api.us-east-1.amazonaws.com/prod/join-waitlist", {
+            const response = await fetch("https://qh921m7woa.execute-api.us-east-1.amazonaws.com/prod/join-waitlist", {
 
                 method: "POST",
                 headers: {
