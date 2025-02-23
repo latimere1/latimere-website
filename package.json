@@ -1,0 +1,10 @@
+{
+  "name": "latimere-waitlist",
+  "version": "1.0.0",
+  "description": "AWS Lambda function for waitlist using DynamoDB and SES",
+  "main": "waitlistHandler.mjs",
+  "type": "module",
+  "dependencies": {
+    "aws-sdk": "^2.1312.0"
+  }
+}
