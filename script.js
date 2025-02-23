@@ -45,7 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         try {
             const response = await fetch("https://qh921m7woa.execute-api.us-east-1.amazonaws.com/prod/join-waitlist", {
-
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -53,7 +52,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 body: JSON.stringify({ email })
             });
 
+            // Parse the JSON response
             const data = await response.json();
+
+            // Check for a non-OK HTTP status
+            if (!response.ok) {
+                console.error("Server error:", data);
+                messageBox.textContent = "Error: " + (data.message || "Server error occurred.");
+                messageBox.style.color = "red";
+                return;
+            }
+
             if (data.success) {
                 messageBox.textContent = "You've been added to the waitlist!";
                 messageBox.style.color = "green";
@@ -63,6 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 messageBox.style.color = "red";
             }
         } catch (error) {
+            console.error("Waitlist submission error:", error);
             messageBox.textContent = "An error occurred. Please try again.";
             messageBox.style.color = "red";
         }
