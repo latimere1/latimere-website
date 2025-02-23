@@ -11,7 +11,8 @@
     <div class="logo">
       <a href="index.html">Latimere</a>
     </div>
-    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    <!-- Removed the inline onclick attribute so that script.js handles the click -->
+    <div class="menu-icon">&#9776;</div>
     <nav id="mobile-menu">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -64,14 +65,7 @@
     <p>&copy; 2025 Latimere. All rights reserved.</p>
   </footer>
   
-  <!-- Load external script -->
+  <!-- Load the external script which attaches the click event listener -->
   <script src="script.js"></script>
-  <!-- Override toggleMenu for the About page to target #mobile-menu -->
-  <script>
-    function toggleMenu() {
-      var menu = document.getElementById("mobile-menu");
-      menu.classList.toggle("show-menu");
-    }
-  </script>
 </body>
 </html>
