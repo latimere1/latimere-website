@@ -234,3 +234,47 @@ footer {
         padding: 14px 24px;
     }
 }
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.6); /* Black with opacity */
+}
+
+.modal-content {
+    background-color: #1E1E1E;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    animation: fadeIn 0.5s ease;
+    color: white;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+.modal-content .close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-content .close:hover,
+.modal-content .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
