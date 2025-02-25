@@ -46,14 +46,19 @@ header {
     color: black;
 }
 
+/* Fixed Navigation Bar */
 nav {
     display: flex;
     justify-content: center;
-    flex-grow: 1;
     gap: 20px;
-    position: absolute;
+    position: fixed;
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
+    background-color: darkslategray;
+    padding: 10px 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 nav a {
@@ -62,6 +67,7 @@ nav a {
     font-size: 18px;
 }
 
+/* CTA Buttons */
 .cta-btn, .btn {
     display: block;
     background-color: black;
@@ -201,8 +207,8 @@ footer {
     nav {
         display: none;
         flex-direction: column;
-        position: absolute;
-        top: 60px;
+        position: fixed;
+        top: 0;
         right: 20px;
         background-color: cyan;
         padding: 10px;
@@ -210,6 +216,7 @@ footer {
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         left: auto;
         transform: none;
+        z-index: 1000;
     }
 
     nav a {
