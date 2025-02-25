@@ -7,22 +7,8 @@ function toggleMenu() {
   menu.classList.toggle("show-menu");
 }
 
-function openModal() {
-  var modal = document.getElementById("learnMoreModal");
-  if (modal) {
-    modal.style.display = "block";
-  }
-}
-
-function closeModal() {
-  var modal = document.getElementById("learnMoreModal");
-  if (modal) {
-    modal.style.display = "none";
-  }
-}
-
 document.addEventListener("DOMContentLoaded", function () {
-  // CTA button event listener for header CTA button
+  // CTA button event listener
   const ctaButton = document.querySelector(".cta-btn");
   if (ctaButton) {
     ctaButton.addEventListener("click", function () {
@@ -41,12 +27,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // (Optional) Hamburger menu functionality is already handled by the inline onclick on .menu-icon
-  // If desired, you can uncomment the following to attach the event here:
-  // const menuIcon = document.querySelector(".menu-icon");
-  // if (menuIcon) {
-  //   menuIcon.addEventListener("click", toggleMenu);
-  // }
+  // Hamburger menu functionality
+  const menuIcon = document.querySelector(".menu-icon");
+  const mobileMenu = document.getElementById("mobile-menu");
+  if (menuIcon && mobileMenu) {
+    menuIcon.addEventListener("click", function () {
+      mobileMenu.classList.toggle("show-menu");
+    });
+  }
 
   // Waitlist form submission handling
   const waitlistForm = document.getElementById("waitlist-form");
@@ -63,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
       try {
         const response = await fetch("https://qh921m7woa.execute-api.us-east-1.amazonaws.com/prod/join-waitlist", {
           method: "POST",
-          mode: "cors",
+          mode: "cors", // explicitly enable CORS
           headers: {
             "Content-Type": "application/json"
           },
@@ -98,12 +86,4 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     console.error("Waitlist form not found!");
   }
-
-  // Modal: Close modal if the user clicks outside the modal content
-  window.addEventListener("click", function (event) {
-    const modal = document.getElementById("learnMoreModal");
-    if (event.target === modal) {
-      closeModal();
-    }
-  });
 });
