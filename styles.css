@@ -20,7 +20,9 @@ header {
     color: #1E1E1E;
     font-size: 24px;
     font-weight: bold;
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo {
@@ -46,17 +48,15 @@ header {
     color: black;
 }
 
-/* Original Navigation Bar, now Sticky */
+/* Original Navigation Bar (positioned absolutely inside header) */
 nav {
     display: flex;
     justify-content: center;
     flex-grow: 1;
     gap: 20px;
-    position: sticky;
-    top: 0;
+    position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 1000;
 }
 
 nav a {
