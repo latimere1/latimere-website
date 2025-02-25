@@ -59,8 +59,17 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         console.log("Response status:", response.status);
-        const data = await response.json();
+        let data = await response.json();
         console.log("Response data:", data);
+
+        // Check if the response data is a string and parse it if necessary
+        if (typeof data === "string") {
+          try {
+            data = JSON.parse(data);
+          } catch (err) {
+            console.error("Failed to parse response string:", err);
+          }
+        }
 
         if (!response.ok) {
           console.error("Server error:", data);
