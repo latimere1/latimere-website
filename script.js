@@ -90,8 +90,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     body: JSON.stringify({ name, email, subject, message })
                 });
                 
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                
                 const data = await response.json();
-                if (response.ok && data.success) {
+                if (data.success) {
                     contactMessageBox.textContent = "Your message has been sent successfully!";
                     contactMessageBox.style.color = "green";
                     contactForm.reset();
@@ -100,14 +104,15 @@ document.addEventListener("DOMContentLoaded", function () {
                     contactMessageBox.style.color = "red";
                 }
             } catch (error) {
+                console.error("Contact form submission error:", error);
                 contactMessageBox.textContent = "An error occurred. Please try again.";
                 contactMessageBox.style.color = "red";
-            }
-            
-            if (submitButton) {
-                setTimeout(() => {
-                    submitButton.disabled = false;
-                }, 3000);
+            } finally {
+                if (submitButton) {
+                    setTimeout(() => {
+                        submitButton.disabled = false;
+                    }, 3000);
+                }
             }
         }, { once: true });
     }
