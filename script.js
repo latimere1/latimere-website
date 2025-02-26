@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
       try {
         const response = await fetch("https://qh921m7woa.execute-api.us-east-1.amazonaws.com/prod/join-waitlist", {
           method: "POST",
-          mode: "cors", // explicitly enable CORS
+          mode: "cors",
           headers: {
             "Content-Type": "application/json"
           },
@@ -135,19 +135,17 @@ document.addEventListener("DOMContentLoaded", function () {
             data = {};
           }
         } else {
-          data = { success: true };
+          data = {};
         }
-        if (typeof data !== "object") {
-          data = { success: true };
-        }
-        if (!response.ok || !data.success) {
+        // If response is OK and either no data is returned or data.success is true, consider it a success.
+        if (response.ok && (Object.keys(data).length === 0 || data.success)) {
+          contactMessageBox.textContent = "Your message has been sent successfully!";
+          contactMessageBox.style.color = "green";
+          contactForm.reset();
+        } else {
           contactMessageBox.textContent = "Error: " + (data.message || "An error occurred. Please try again.");
           contactMessageBox.style.color = "red";
-          return;
         }
-        contactMessageBox.textContent = "Your message has been sent successfully!";
-        contactMessageBox.style.color = "green";
-        contactForm.reset();
       } catch (error) {
         console.error("Contact form submission error:", error);
         contactMessageBox.textContent = "An error occurred. Please try again.";
