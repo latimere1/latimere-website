@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
       try {
         const response = await fetch("https://qh921m7woa.execute-api.us-east-1.amazonaws.com/prod/join-waitlist", {
           method: "POST",
-          mode: "cors",
+          mode: "cors", // explicitly enable CORS
           headers: {
             "Content-Type": "application/json"
           },
@@ -95,9 +95,8 @@ document.addEventListener("DOMContentLoaded", function () {
         messageBox.style.color = "red";
       }
     });
-  } else {
-    console.error("Waitlist form not found!");
   }
+  // Note: We no longer log an error if waitlistForm is not found
 
   // Contact form submission handling
   const contactForm = document.getElementById("contact-form");
@@ -117,12 +116,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const response = await fetch("https://a5owpodkwg.execute-api.us-east-1.amazonaws.com/prod/send-contact-message", {
           method: "POST",
           mode: "cors",
-          headers: {
-            "Content-Type": "application/json"
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ name, email, subject, message })
         });
-
         console.log("Contact response status:", response.status);
         const responseText = await response.text();
         console.log("Contact response text:", responseText);
@@ -137,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
           data = {};
         }
-        // If response is OK and either no data is returned or data.success is true, consider it a success.
+        // Check for success: if response is OK and either no data returned or data.success is true.
         if (response.ok && (Object.keys(data).length === 0 || data.success)) {
           contactMessageBox.textContent = "Your message has been sent successfully!";
           contactMessageBox.style.color = "green";
