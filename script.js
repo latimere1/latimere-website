@@ -59,16 +59,20 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         console.log("Response status:", response.status);
-        let data = await response.json();
-        console.log("Response data:", data);
-
-        // Check if the response data is a string and parse it if necessary
-        if (typeof data === "string") {
+        // Attempt to read response as text first
+        const responseText = await response.text();
+        console.log("Response text:", responseText);
+        let data;
+        if (responseText) {
           try {
-            data = JSON.parse(data);
+            data = JSON.parse(responseText);
           } catch (err) {
-            console.error("Failed to parse response string:", err);
+            console.error("Error parsing response JSON:", err);
+            data = {};
           }
+        } else {
+          // If response body is empty, assume success
+          data = { success: true };
         }
 
         if (!response.ok) {
