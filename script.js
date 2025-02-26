@@ -59,7 +59,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         console.log("Response status:", response.status);
-        // Attempt to read response as text first
         const responseText = await response.text();
         console.log("Response text:", responseText);
         let data;
@@ -71,7 +70,12 @@ document.addEventListener("DOMContentLoaded", function () {
             data = {};
           }
         } else {
-          // If response body is empty, assume success
+          // If the response body is empty, assume success
+          data = { success: true };
+        }
+
+        // If the parsed data isn't an object (for example, it's a boolean or string), force it to success
+        if (typeof data !== "object") {
           data = { success: true };
         }
 
@@ -87,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
           messageBox.style.color = "green";
           if (emailInput) emailInput.value = "";
         } else {
-          messageBox.textContent = "Error: " + data.message;
+          messageBox.textContent = "Error: " + (data.message || "An error occurred. Please try again.");
           messageBox.style.color = "red";
         }
       } catch (error) {
