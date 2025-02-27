@@ -5,9 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Latimere - Home</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .footer {
+            background-color: #121212;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        .footer a {
+            color: #00BCD4;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
 </head>
 <body>
-
     <header>
         <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
         <div class="logo">
@@ -29,14 +42,14 @@
     </section>
 
     <section class="waitlist">
-    <h2>Join the Waitlist</h2>
-    <p>Be the first to experience Aethra. Sign up to receive updates and exclusive early access.</p>
-    <form id="waitlist-form">
-        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-        <button type="submit" class="btn">Subscribe</button>
-    </form>
-    <p id="waitlist-message"></p>
-</section>
+        <h2>Join the Waitlist</h2>
+        <p>Be the first to experience Aethra. Sign up to receive updates and exclusive early access.</p>
+        <form id="waitlist-form">
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <button type="submit" class="btn">Subscribe</button>
+        </form>
+        <p id="waitlist-message"></p>
+    </section>
     
     <section class="features">
         <h2>Why Choose Aethra?</h2>
@@ -66,12 +79,10 @@
         <button class="btn" style="margin-bottom: 40px;">Get Started</button>
     </section>
     
-    <footer>
-        <div class="footer-links">
-            <a href="privacy.html" style="color: white;">Privacy Policy</a>
-            <a href="terms.html" style="color: white;">Terms of Service</a>
-        </div>
+    <footer class="footer">
         <p>&copy; 2025 Latimere. All rights reserved.</p>
+        <a href="privacy.html">Privacy Policy</a> |
+        <a href="terms.html">Terms of Service</a>
     </footer>
     
     <script src="script.js"></script>
