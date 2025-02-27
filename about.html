@@ -5,13 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Latimere - About</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .footer {
+      background-color: #121212;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    .footer a {
+      color: #00BCD4;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  </style>
 </head>
 <body>
   <header>
     <div class="logo">
       <a href="index.html">Latimere</a>
     </div>
-    <!-- Removed the inline onclick attribute so that script.js handles the click -->
     <div class="menu-icon">&#9776;</div>
     <nav id="mobile-menu">
       <a href="index.html">Home</a>
@@ -35,7 +48,7 @@
     </p>
     <p>Latimere was founded to answer this question:</p>
     <blockquote>
-      🚀 <strong>What if AI could be more than just an app—what if it could live alongside us, understand our world, and enhance our lives in real-time?</strong>
+      <strong>What if AI could be more than just an app—what if it could live alongside us, understand our world, and enhance our lives in real-time?</strong>
     </blockquote>
     <p>
       From that vision, <strong>Aethra</strong> was born—a <strong>wearable AI companion</strong> that sits on your shoulder, offering <strong>real-time insights, assistance, and interactions</strong> based on your preferences and environment. <strong>Aethra isn’t just a gadget—it’s an intelligent partner designed to help people navigate life with greater ease, efficiency, and intelligence.</strong>
@@ -48,24 +61,21 @@
       We aren’t just building <strong>a single product</strong>—we’re laying the foundation for the <strong>future of human-AI interaction</strong>. Our long-term vision is to:
     </p>
     <ul>
-      <li>✅ <strong>Make AI seamlessly integrated into everyday life</strong>, enhancing productivity, communication, and well-being.</li>
-      <li>✅ <strong>Ensure smart robotics are accessible to everyone, not just tech elites.</strong></li>
-      <li>✅ <strong>Evolve human-AI collaboration beyond screens and smart speakers</strong> into a more natural, interactive experience.</li>
+      <li><strong>Make AI seamlessly integrated into everyday life</strong>, enhancing productivity, communication, and well-being.</li>
+      <li><strong>Ensure smart robotics are accessible to everyone, not just tech elites.</strong></li>
+      <li><strong>Evolve human-AI collaboration beyond screens and smart speakers</strong> into a more natural, interactive experience.</li>
     </ul>
     <p>
       Latimere is committed to developing <strong>intelligent, assistive robotics</strong> that make life <strong>easier, more efficient, and more engaging</strong>. As technology advances, we will push the limits of <strong>AI-driven robotics, wearable tech, and interactive assistants</strong>, making them <strong>more personal, more intelligent, and more human-friendly</strong>.
     </p>
   </section>
   
-  <footer>
-    <div class="footer-links">
-      <a href="privacy.html" style="color: white;">Privacy Policy</a>
-      <a href="terms.html" style="color: white;">Terms of Service</a>
-    </div>
+  <footer class="footer">
     <p>&copy; 2025 Latimere. All rights reserved.</p>
+    <a href="privacy.html">Privacy Policy</a> |
+    <a href="terms.html">Terms of Service</a>
   </footer>
   
-  <!-- Load the external script which attaches the click event listener -->
   <script src="script.js"></script>
 </body>
 </html>
